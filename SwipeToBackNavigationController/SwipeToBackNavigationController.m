@@ -19,7 +19,8 @@
     
     __weak typeof (self) weakSelf = self;
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        // gesture's default delegate is a UINavigationInteractiveTransition object.
+        // gesture's default delegate is a UINavigationInteractiveTransition object
+        // which probably disables the swipe-to-back function when user customizes back bar button item.
         self.interactivePopGestureRecognizer.delegate = nil;
         self.delegate = weakSelf;
     }
